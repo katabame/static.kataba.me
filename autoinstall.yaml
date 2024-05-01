@@ -1,0 +1,44 @@
+# https://canonical-subiquity.readthedocs-hosted.com/en/latest/reference/autoinstall-reference.html
+
+autoinstall:
+version: 1
+
+interactive-sections:
+  - network
+
+locale: 'en_US.UTF-8'
+
+refresh-installer:
+  update: true
+
+keyboard:
+  layout: "us"
+
+source:
+  search_drivers: false
+
+apt:
+  mirror-selection:
+    primary:
+      - arches: [i386, amd64]
+        uri: "https://ftp.udx.icscoe.jp/Linux/ubuntu/"
+      - country-mirror
+  fallback: abort
+  geoip: true
+
+storage:
+  layout:
+    name: direct
+
+identity:
+  username: katabame
+  hostname: freesia
+  password: '$6$nlchp5viHGHsgGq6$DpU0PyU21.GVko93KL54WkhuaA0dBjRJCQhfTs0UOK14N/UKLKSlEsLVMXg8pWIkUDnS/JHgRTzPo1j9XGuSI.'
+
+packages:
+  - nano
+  - screen
+
+timezone: "Asia/Tokyo"
+
+updates: all
